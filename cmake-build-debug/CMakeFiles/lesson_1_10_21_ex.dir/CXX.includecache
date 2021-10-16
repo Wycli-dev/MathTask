@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/alexdenisovit/Documents/cpp_lessons/lesson_1_10_21_ex/MathTask.cpp
+MathTask.h
+/Users/alexdenisovit/Documents/cpp_lessons/lesson_1_10_21_ex/MathTask.h
+iostream
+-
+string
+-
+
+/Users/alexdenisovit/Documents/cpp_lessons/lesson_1_10_21_ex/MathTask.h
+stdio.h
+-
+string
+-
+sstream
+-
+vector
+-
+
