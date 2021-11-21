@@ -18,17 +18,12 @@ using namespace std;
 class MathTask {
 private:
     double result;
-
-
     bool operation_exists(string example, char operation);
     double calculate(double x, char operation, double y);
 
-
 public:
     MathTask(string source);
-
     string create_child_source(vector<double>::iterator startNumber, vector<double>::iterator endNumber, vector<char>::iterator startOperation, vector<char>::iterator endOperation);
-
     double get_result();
 };
 
