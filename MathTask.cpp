@@ -90,28 +90,23 @@ MathTask::MathTask(string source) {
             if(operations[0] == '+' || operations[0] == '-') {
                 char operation = operations[0];
                 double leftNumber = numbers[0];
-
+                
                 string rightPartSource = create_child_source(numbers.begin() + 1,
                                                              numbers.end(),
                                                              operations.begin() + 1,
                                                              operations.end());
 
-//                cout << rightPartSource << endl;
-
                 MathTask* rightMathTask = new MathTask(rightPartSource);
-
                 result = calculate(leftNumber, operation, rightMathTask->get_result());
-
+                
             } else {
-
                 char operation = operations[1];
-
+                
                 string leftPartSource = create_child_source(numbers.begin(),
                                                             numbers.begin() + 2,
                                                             operations.begin(),
                                                             operations.begin() + 1);
-
-
+                
                 string rightPartSource = create_child_source(numbers.begin() + 2,
                                                              numbers.end(),
                                                              operations.begin() + 2,
@@ -119,7 +114,6 @@ MathTask::MathTask(string source) {
 
                 MathTask* leftMathTask = new MathTask(leftPartSource);
                 MathTask* rightMathTask = new MathTask(rightPartSource);
-
                 result = calculate(leftMathTask->get_result(), operation, rightMathTask->get_result());
             }
     };
@@ -133,22 +127,18 @@ string MathTask::create_child_source(vector<double>::iterator startNumber,
     string result = "";
 
     while (startNumber != endNumber) {
-
         result += to_string(*startNumber);
         result += " ";
         startNumber++;
-
+        
         if(startNumber != endNumber) {
             string nextOperation {*startOperation};
             result += nextOperation;
             result += " ";
             startOperation++;
         }
-
     }
-
     return result;
-
 }
 
 double MathTask::get_result() {
