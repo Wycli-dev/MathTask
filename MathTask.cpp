@@ -44,28 +44,21 @@ bool MathTask::operation_exists(string example,char operation) {
 
 
 double MathTask::calculate(double x, char operation, double y) {
-
     switch (operation) {
         case '+':
             return x+y;
-
         case '-':
             return x-y;
-
         case '*':
             return x*y;
-
         case '/':
             return x/y;
-
         default:
             return 0.0;
     }
-
 }
 
 MathTask::MathTask(string source) {
-
     vector<double> numbers;
     vector<char> operations;
 
@@ -74,7 +67,6 @@ MathTask::MathTask(string source) {
     char nextOperation;
 
     while (true) {
-
         s >> nextNumber;
         if(s.fail()) break;
         numbers.push_back(nextNumber);
@@ -82,7 +74,6 @@ MathTask::MathTask(string source) {
         s >> nextOperation;
         if (s.fail()) break;
         operations.push_back(nextOperation);
-
     }
 
     switch (operations.size()) {
@@ -96,9 +87,7 @@ MathTask::MathTask(string source) {
             break;
 
         default:
-
             if(operations[0] == '+' || operations[0] == '-') {
-
                 char operation = operations[0];
                 double leftNumber = numbers[0];
 
